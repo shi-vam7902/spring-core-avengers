@@ -1,0 +1,18 @@
+spring has four main
+jar
+1.spring core-primary
+2.context-container
+
+3.bean- class memory allocation
+
+4.el- Expression langauge
+
+what is spring bean?
+
+A class who's memory allocation and deallocation managed by [Ioc Container]
+
+maven has three jar's
+1. local-> computer
+2. remote-> company server
+
+3.central-> mvn-repo .com
