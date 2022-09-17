@@ -1,16 +1,15 @@
 package com.bean;
 
-public class UserBean  extends RoleBean{
+public class UserBean  {
 	String firstname, email,password;
-	String rname ="user";
-	public UserBean()
-	{
-		RoleBean r = new RoleBean();
+	
+	RoleBean role;
+	
 		
-		r.setRoleName(rname);
+	public UserBean(RoleBean role) {
+		this.role = role;
 	}
-		
-		
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -34,6 +33,5 @@ public class UserBean  extends RoleBean{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	
 }

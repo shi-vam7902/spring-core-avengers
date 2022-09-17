@@ -20,24 +20,9 @@ public class App
         
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
        
-        UserDao userDao1 =  context.getBean("userdao",UserDao.class);
-        UserDao userDao2 =  context.getBean("userdao",UserDao.class);
-        UserDao userDao3 =  context.getBean("userdao",UserDao.class);
+        RoleBean r = new RoleBean();
+        UserBean userBean = new UserBean(r);
         
-        System.out.println(userDao1);
-        System.out.println(userDao2);
-        System.out.println(userDao3);
-        
-        RoleBean roleBean = context.getBean("rolebean",RoleBean.class);
-        UserBean userBean= context.getBean("userbean",UserBean.class);
-       
-       System.out.println(userBean.getRoleName());
-        
-       System.out.println(roleBean.getClass());
-        
-        System.out.println(userDao1.getdBname());
-        
-        
-        
+     context.registerShutdownHook();   
     }
 }

@@ -9,6 +9,15 @@ public class UserDao {
 
 	public void setdBname(String dBname) {
 		this.dBname = dBname;
+		
+	}
+	public void init()
+	{
+		System.out.println("init Called()");
+	}
+	public void destroy()
+	{
+		System.out.println("destroy()");
 	}
 	
 }

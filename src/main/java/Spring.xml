@@ -2,19 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-init-method="init" default-destroy-method="destroy">
 
 	<!-- bean definitions here -->
 	<bean class="com.dao.UserDao" id="userdao">
 		<property name="dBname" value="springDB"></property>
 	</bean>
-	
+									
 	<bean class="com.bean.RoleBean" id="rolebean">
-		<property name="roleName" value="rolename"></property>
+		<property name="roleName" value="admin"></property>
 	</bean>
-	<bean class="com.bean.UserBean" id="userbean">
-		<property name="firstname" value="fname"></property>
-		<property name="email" value="email"></property>
-		<property name="password" value="password"></property>
+
+	<bean class="com.bean.UserBean" id="userbean" init-method="initBean">
+		
+		<property name="firstname" value="ram"></property>
+		<property name="email" value="ram@email.com"></property>
+		<property name="password" value="ram123"></property>
+		<constructor-arg name="role" ref="role"></constructor-arg>
 	</bean>
 </beans>
